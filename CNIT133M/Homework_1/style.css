@@ -1,3 +1,13 @@
 .title {
     text-align: center;
 }
+
+.about-me {
+    display: flex;
+    justify-content: center;
+}
+.tech-for-class-heading, .resources-heading {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

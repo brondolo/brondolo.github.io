@@ -1,3 +1,5 @@
+	* {box-sizing: border-box;}
+	
 	body, h1, h2, h3, p, img, ul, li{
 		border:0; margin:0; padding:0;
 	}
@@ -15,7 +17,8 @@
 		line-height:21px; /* line height sets the vertical spacing between lines of text. */
 	}
 		
-	div#header{
+	header{
+		box-sizing: content-box;
 		background-color:#333; /* a more specific way to set a background color */
 		background-image:url(images/headerbkgd.png); /* sets a background image in the header and the position it should sit */
 		background-repeat:no-repeat; /* sets a background image to repeat, repeat-x, repeat-y or not at all as written in this rule */
@@ -67,20 +70,20 @@
 				
 	div.col-right{
 		float:right;
-		width:660px
+		width:70%
 		}
 		
-	div.sidebar-left{
+	aside{
 		float:left;
 		padding:0 10px;
-		width:200px;	/* when floating content next to each other, applying set widths will make the content play nice with each other. Change the width of the siebar, or take away the width of the above "div.col-right" and see what happens to get a better idea of how widths effect floats */
+		width:30%;	/* when floating content next to each other, applying set widths will make the content play nice with each other. Change the width of the siebar, or take away the width of the above "div.col-right" and see what happens to get a better idea of how widths effect floats */
 		}
 		
-	div.sidebar-left a{
+	aside a{
 		color:#445e64;	/* this redefines all links in the left sidebar to this new color, as opposed to the default blue link color */
 	}
 	
-	div.sidebar-left a:hover{
+	aside a:hover{
 		text-decoration:none
 	}	/* when hovering over a link, in the sidebar, this turns off the underline */
 	
@@ -97,7 +100,7 @@
 		font-size:11px;	/* this makes all anchor classes with .list applied 11px tall  */
 	}
 				
-	div#footer{
+	footer{
 		background-color:#c4d5d9;
 		margin:0 auto;
 		padding:15px;
@@ -117,3 +120,38 @@
 	.clear{
 		clear:both; /* this clears floats.  This would be used to cancel out a float's behavior on content below it.  */
 	}	
+
+	@media only screen and (max-width: 600px)
+	{
+		body{background:red;}
+		div.col-right{
+			float:right;
+			width:85%;
+			}
+			
+		aside{
+			float:left;
+			padding:0 10px;
+			width:15%;	/* when floating content next to each other, applying set widths will make the content play nice with each other. Change the width of the siebar, or take away the width of the above "div.col-right" and see what happens to get a better idea of how widths effect floats */
+			}
+	}
+
+	@media only screen and (min-width: 600px) 
+	{
+		body{background:green;}
+		div.col-right{
+			float:right;
+			width:80%;
+			}
+			
+		aside{
+			float:left;
+			padding:0 10px;
+			width:20%;	/* when floating content next to each other, applying set widths will make the content play nice with each other. Change the width of the siebar, or take away the width of the above "div.col-right" and see what happens to get a better idea of how widths effect floats */
+			}
+	}
+
+	@media only screen and (min-width:992px) 
+	{
+		body{background:orange;}
+	}

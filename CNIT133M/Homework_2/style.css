@@ -121,37 +121,50 @@
 		clear:both; /* this clears floats.  This would be used to cancel out a float's behavior on content below it.  */
 	}	
 
-	@media only screen and (max-width: 600px)
+	/* medium devices */
+	@media only screen and (max-width: 991.98px) 
+	{
+		body{
+			background:green;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		header{
+			display:flex;
+			flex-direction: column;
+			align-items: center;
+		}
+		div.content{
+			width:90%
+			display:flex;
+			flex-direction: column;
+		}
+		div.col-right{
+			display:flex;
+			flex-direction: column;
+			float:right;
+			width:100%;
+			}
+			
+		aside{
+			float:left;
+			width:100%;	/* when floating content next to each other, applying set widths will make the content play nice with each other. Change the width of the siebar, or take away the width of the above "div.col-right" and see what happens to get a better idea of how widths effect floats */
+			}
+	}
+
+	/* small devices */
+	@media only screen and (max-width: 767.98px)
 	{
 		body{background:red;}
 		div.col-right{
 			float:right;
-			width:85%;
+			width:100%;
 			}
 			
 		aside{
 			float:left;
 			padding:0 10px;
-			width:15%;	/* when floating content next to each other, applying set widths will make the content play nice with each other. Change the width of the siebar, or take away the width of the above "div.col-right" and see what happens to get a better idea of how widths effect floats */
+			width:100%;	/* when floating content next to each other, applying set widths will make the content play nice with each other. Change the width of the siebar, or take away the width of the above "div.col-right" and see what happens to get a better idea of how widths effect floats */
 			}
-	}
-
-	@media only screen and (min-width: 600px) 
-	{
-		body{background:green;}
-		div.col-right{
-			float:right;
-			width:80%;
-			}
-			
-		aside{
-			float:left;
-			padding:0 10px;
-			width:20%;	/* when floating content next to each other, applying set widths will make the content play nice with each other. Change the width of the siebar, or take away the width of the above "div.col-right" and see what happens to get a better idea of how widths effect floats */
-			}
-	}
-
-	@media only screen and (min-width:992px) 
-	{
-		body{background:orange;}
 	}

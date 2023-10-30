@@ -12,20 +12,60 @@
 
 <body>
   
-    <nav class="navbar sticky-top">
-        <a class="navbar-brand" href="./index.html">ABC Toys</a>
-        <button type="button" onclick="window.location.href='./products.html';" class="btn btn-link">Products</button>      
-        <button type="button" onclick="window.location.href='./location.html';" class="btn btn-link">Location</button>      
-        <button type="button" onclick="window.location.href='./contacts.html';" class="btn btn-link">Contact Us</button>      
-        <button type="button" onclick="window.location.href='./extras.html';" class="btn btn-link">Extras</button>
-        <span class="navbar-text">Making learning fun</span>          
-    </nav>
+    <header class="sticky-top bg-primary text-white">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <a class="navbar-brand text-white" href="./index.html">ABC Toys</a>
+            </div>
+            <button type="button" onclick="window.location.href='./products.html';" class="btn btn-link text-white">Products</button>      
+            <button type="button" onclick="window.location.href='./location.html';" class="btn btn-link text-white">Location</button>      
+            <button type="button" onclick="window.location.href='./contacts.html';" class="btn btn-link text-white">Contact Us</button>      
+            <button type="button" onclick="window.location.href='./extras.html';" class="btn btn-link text-white">Extras</button>
+            <span class="navbar-text">Making learning fun</span>   
+          </div>
+             
+        </nav>
+    </header>
+    
     <section>
         <p>This is the product page</p>
     </section>
 
+    <div class="container">
+        <h2>Collapsible List</h2>
+        <button class="btn btn-primary" data-toggle="collapse" data-target="#list">Toggle List</button>
+        <ul id="list" class="list-group collapse">
+            <li class="list-group-item">Item 1</li>
+            <li class="list-group-item">Item 2</li>
+            <li class="list-group-item">Item 3</li>
+            <!-- Add more list items as needed -->
+        </ul>
+    </div>
+    
 
-
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="./images/robot-1797548_640.png" class="img-fluid" alt="Product Image">
+            </div>
+            <div class="col-lg-6">
+                <h2>Product Name</h2>
+                <p><strong>Price:</strong> $99.99</p>
+                <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel lacus id ipsum dapibus vestibulum.</p>
+                <p><strong>Features:</strong></p>
+                <ul>
+                    <li>Feature 1</li>
+                    <li>Feature 2</li>
+                    <li>Feature 3</li>
+                </ul>
+                <button class="btn btn-primary">Add to Cart</button>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 
 </html>

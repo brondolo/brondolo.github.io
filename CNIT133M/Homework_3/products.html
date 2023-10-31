@@ -28,41 +28,70 @@
         </nav>
     </header>
     
-    <section>
-        <p>This is the product page</p>
-    </section>
-
-    <div class="container">
-        <h2>Collapsible List</h2>
-        <button class="btn btn-primary" data-toggle="collapse" data-target="#list">Toggle List</button>
-        <ul id="list" class="list-group collapse">
-            <li class="list-group-item">Item 1</li>
-            <li class="list-group-item">Item 2</li>
-            <li class="list-group-item">Item 3</li>
-            <!-- Add more list items as needed -->
-        </ul>
-    </div>
-    
-
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <img src="./images/robot-1797548_640.png" class="img-fluid" alt="Product Image">
+    <div class="container mt-4">
+        <div id="accordion">
+          <!-- Item 1 -->
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Building Blocks
+                </button>
+              </h5>
             </div>
-            <div class="col-lg-6">
-                <h2>Product Name</h2>
-                <p><strong>Price:</strong> $99.99</p>
-                <p><strong>Description:</strong> Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin vel lacus id ipsum dapibus vestibulum.</p>
-                <p><strong>Features:</strong></p>
-                <ul>
-                    <li>Feature 1</li>
-                    <li>Feature 2</li>
-                    <li>Feature 3</li>
-                </ul>
-                <button class="btn btn-primary">Add to Cart</button>
+            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="col-lg-6">
+                    <img src="./images/lego-3388163_640.png" class="img-fluid" alt="Product Image">
+                </div>
+                <div class="col-lg-6">
+                    <p><strong>Price:</strong> $29.99</p>
+                    <p><strong>Description:</strong> With building blocks, you can create cities, planes, castles, or even use them as booby traps on unsuspecting visitors. They will writhe in agony after stepping on them. The possibilities are endles with building blocks!</p>
+                </div>
+            </div>
+          </div>
+      
+          <!-- Item 2 -->
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  Robot
+                </button>
+              </h5>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="col-lg-6">
+                    <img src="./images/robot-1797548_640.png" class="img-fluid" alt="Product Image">
+                </div>
+                <div class="col-lg-6">
+                    <p><strong>Price:</strong> $99.99</p>
+                    <p><strong>Description:</strong> This state-of-the-art robot comes with an indestructible metal body, glowing red eyes, and an indomitable spirit to enslave the human race! Get yours now and it will love you as if it were its pet! </p>
+                </div>
+            </div>
+          </div>
+      
+          <!-- Item 3 -->
+          <div class="card">
+            <div class="card-header" id="headingThree">
+              <h5 class="mb-0">
+                <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  Puzzle Cube
+                </button>
+              </h5>
+            </div>
+            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                <div class="col-lg-6">
+                    <img src="./images/rubiks-cube-157058_640.png" class="img-fluid" alt="Product Image">
+                </div>
+                <div class="col-lg-6">
+                    <p><strong>Price:</strong> $14.99</p>
+                    <p><strong>Description:</strong> It's a Rubik's Cube! You can spend minutes, hours, days, or even years trying to solve it! The frustration is endless!</p>
+                    <button class="btn btn-primary">Add to Cart</button>
+                </div>
             </div>
         </div>
-    </div>
+      </div>
+
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

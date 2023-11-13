@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PWA Example</title>
+    <link rel="manifest" href="/manifest.json">
+    <style>
+        body {
+            background-size: cover;
+            transition: background-image 0.5s ease-in-out;
+        }
+        input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="nameInput" placeholder="Enter your name">
+    <button onclick="saveName()">Save Name</button>
+
+    <label for="backgroundSelect">Select Background:</label>
+    <select id="backgroundSelect" onchange="changeBackground()">
+        <option value="./images/lightblue.jpg" selected>Background 1</option>
+        <option value="./images/lightgold.jpg">Background 2</option>
+    </select>
+
+    <script>
+        // Check for service worker support
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+                console.log('Service Worker registered with scope:', registration.scope);
+            }).catch(function(error) {
+                console.error('Service Worker registration failed:', error);
+            });
+        }
+
+        // save a name in local storage
+        function saveName() {
+            const savedName = localStorage.getItem('name');
+            if (savedName) {
+                document.getElementById('nameInput').value = savedName;
+            }
+        }
+
+
+        // change background image based on the selected option
+        function changeBackground() {
+            const name = document.getElementById('nameInput').value;
+            localStorage.setItem('name', name);
+
+            const select = document.getElementById('backgroundSelect');
+            const selectedOption = select.options[select.selectedIndex];
+            const imageUrl = selectedOption.value;
+
+            document.body.style.backgroundImage = `url(${imageUrl})`;
+        }
+
+        // Initial background change on page load
+        changeBackground();
+    </script>
+</body>
+</html>

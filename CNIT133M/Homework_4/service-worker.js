@@ -5,7 +5,7 @@ self.addEventListener('install', (event) => {
                 '/',
                 '/index.html',
                 '/manifest.json',
-                '/images/lightblue.jpg'
+                '/images/dog-icon-32.png'
             ]);
         })
     );

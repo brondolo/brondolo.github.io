@@ -8,8 +8,8 @@
     "theme_color": "#000000",
     "icons": [
         {
-            "src": "/dog-icon-32.png",
-            "sizes": "192x192",
+            "src": "/dog-icon-100.png",
+            "sizes": "100x100",
             "type": "image/png"
         }
     ]

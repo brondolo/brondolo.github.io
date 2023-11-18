@@ -16,6 +16,41 @@
     </style>
 </head>
 <body>
+    <h1>Heading 1</h1>
+    <p>
+        A Progressive Web App (PWA) is a type of web application that leverages modern web technologies to provide a more app-like experience to users. 
+        PWAs are designed to work on any platform with a standards-compliant browser, including both desktop and mobile devices. 
+        They aim to combine the best features of the web and mobile apps, offering improved performance, offline capabilities, and an engaging user experience.
+
+        Key characteristics of Progressive Web Apps include:
+        
+        Progressive Enhancement: PWAs are built with progressive enhancement in mind, meaning they should work for all users regardless of their browser or 
+        device capabilities. Users with modern browsers and devices get an enhanced experience, while older browsers and devices still receive a functional 
+        experience.
+        
+        Responsive Design: PWAs are designed to be responsive and adapt to various screen sizes, providing a seamless experience across different devices.
+        
+        App-Like Experience: PWAs often resemble native mobile apps in terms of functionality and user interface. They use an app shell model to provide a 
+        consistent and fast user experience.
+        
+        Offline Functionality: One of the defining features of PWAs is their ability to work offline. Service workers, a type of script that runs in the 
+        background, enable this by caching essential resources. Users can interact with the app even when there's no internet connection, and the app can 
+        sync data when the connection is restored.
+        
+        Fast Performance: PWAs are designed to be fast and efficient, utilizing techniques like lazy loading and efficient caching to reduce load times.
+        
+        Secure Connections: PWAs are served over HTTPS to ensure data integrity and security. This is a requirement for using service workers and to prevent 
+        potential security threats.
+        
+        App-Like Interactions: PWAs can offer native-like interactions, such as smooth animations and gestures, providing a more immersive user experience.
+        
+        Discoverability: PWAs can be discovered and accessed through search engines, just like traditional websites. However, users can also install them on 
+        their devices for quick access from the home screen, similar to native apps.
+        
+        To turn a website into a Progressive Web App, developers typically follow a set of best practices, including the use of service workers for offline 
+        support, a responsive design for different screen sizes, and the adoption of web app manifests to provide metadata for the app when it's installed on 
+        a device.        
+    </p>
     <input type="text" id="nameInput" placeholder="Enter your name">
     <button onclick="saveName()">Save Name</button>
 
@@ -28,7 +63,7 @@
     <script>
         // Check for service worker support
         if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js').then(function(registration) {
+            navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
                 console.log('Service Worker registered with scope:', registration.scope);
             }).catch(function(error) {
                 console.error('Service Worker registration failed:', error);

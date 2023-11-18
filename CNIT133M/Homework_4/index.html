@@ -51,8 +51,9 @@
         support, a responsive design for different screen sizes, and the adoption of web app manifests to provide metadata for the app when it's installed on 
         a device.        
     </p>
-    <input type="text" id="nameInput" placeholder="Enter your name">
-    <button onclick="saveName()">Save Name</button>
+    <label for="textInput">Enter Text:</label>
+    <input type="text" id="textInput">
+    <button onclick="handleInput()">Save to Local Storage</button>
 
     <label for="backgroundSelect">Select Background:</label>
     <select id="backgroundSelect" onchange="changeBackground()">
@@ -71,10 +72,18 @@
         }
 
         // save a name in local storage
-        function saveName() {
-            const savedName = localStorage.getItem('name');
-            if (savedName) {
-                document.getElementById('nameInput').value = savedName;
+        function handleInput() {
+            // Get the input value
+            var inputValue = document.getElementById('textInput').value;
+
+            // Check if the input value is in local storage
+            if (localStorage.getItem('savedText') === null) {
+                // If not in local storage, save it
+                localStorage.setItem('savedText', inputValue);
+                alert('Text saved to local storage!');
+            } else {
+                // If already in local storage, do something else or notify the user
+                alert('Text is already in local storage!');
             }
         }
 

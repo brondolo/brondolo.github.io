@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PWA Example</title>
+    <title>CNIT 133M Homework 4</title>
     <link rel="manifest" href="/manifest.json">
     <style>
         body {
@@ -16,7 +16,7 @@
     </style>
 </head>
 <body>
-    <h1>Heading 1</h1>
+    <h1>About Progressive Web Apps</h1>
     <p>
         A Progressive Web App (PWA) is a type of web application that leverages modern web technologies to provide a more app-like experience to users. 
         PWAs are designed to work on any platform with a standards-compliant browser, including both desktop and mobile devices. 
@@ -52,13 +52,12 @@
         a device.        
     </p>
     <label for="textInput">Enter Text:</label>
-    <input type="text" id="textInput">
-    <button onclick="handleInput()">Save to Local Storage</button>
+    <input type="text" id="textInput" onblur="handleInput()">
 
     <label for="backgroundSelect">Select Background:</label>
     <select id="backgroundSelect" onchange="changeBackground()">
-        <option value="./images/lightblue.jpg" selected>Background 1</option>
-        <option value="./images/lightgold.jpg">Background 2</option>
+        <option value="./images/lightblue.jpg" selected>Light Blue</option>
+        <option value="./images/lightgold.jpg">Light Gold</option>
     </select>
 
     <script>

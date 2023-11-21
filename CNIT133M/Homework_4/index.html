@@ -74,16 +74,8 @@
         function handleInput() {
             // Get the input value
             var inputValue = document.getElementById('textInput').value;
+            localStorage.setItem('name', inputValue);
 
-            // Check if the input value is in local storage
-            if (localStorage.getItem('savedText') === null) {
-                // If not in local storage, save it
-                localStorage.setItem('savedText', inputValue);
-                alert('Text saved to local storage!');
-            } else {
-                // If already in local storage, do something else or notify the user
-                alert('Text is already in local storage!');
-            }
         }
 
 

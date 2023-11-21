@@ -10,39 +10,16 @@
 <body>
     <h1>About Progressive Web Apps</h1>
     <p>
-        A Progressive Web App (PWA) is a type of web application that leverages modern web technologies to provide a more app-like experience to users. 
-        PWAs are designed to work on any platform with a standards-compliant browser, including both desktop and mobile devices. 
-        They aim to combine the best features of the web and mobile apps, offering improved performance, offline capabilities, and an engaging user experience.
+        A Progressive Web App (PWA) is a type of web application that leverages modern web technologies to provide a more app-like experience to users.
+        A manifest file is added to provide metadata for the app so it can be installed on a device. 
+        PWAs are designed to work on any browser, including both desktop and mobile devices. 
+        They combine the best features of the web and mobile apps, offering improved performance, offline capabilities, and an engaging user experience.
     </p>
     <p>
-        Key characteristics of Progressive Web Apps include:
-        
-        Progressive Enhancement: PWAs are built with progressive enhancement in mind, meaning they should work for all users regardless of their browser or 
-        device capabilities. Users with modern browsers and devices get an enhanced experience, while older browsers and devices still receive a functional 
-        experience.
-        
-        Responsive Design: PWAs are designed to be responsive and adapt to various screen sizes, providing a seamless experience across different devices.
-        
-        App-Like Experience: PWAs often resemble native mobile apps in terms of functionality and user interface. They use an app shell model to provide a 
-        consistent and fast user experience.
-        
-        Offline Functionality: One of the defining features of PWAs is their ability to work offline. Service workers, a type of script that runs in the 
-        background, enable this by caching essential resources. Users can interact with the app even when there's no internet connection, and the app can 
-        sync data when the connection is restored.
-        
-        Fast Performance: PWAs are designed to be fast and efficient, utilizing techniques like lazy loading and efficient caching to reduce load times.
-        
-        Secure Connections: PWAs are served over HTTPS to ensure data integrity and security. This is a requirement for using service workers and to prevent 
-        potential security threats.
-        
-        App-Like Interactions: PWAs can offer native-like interactions, such as smooth animations and gestures, providing a more immersive user experience.
-        
-        Discoverability: PWAs can be discovered and accessed through search engines, just like traditional websites. However, users can also install them on 
-        their devices for quick access from the home screen, similar to native apps.
-        
-        To turn a website into a Progressive Web App, we should use service workers for offline 
-        support, utilize responsive design for different screen sizes, and add web app manifests to provide metadata for the app when it's installed on 
-        a device.        
+        PWAs use responsive web design to adapt to various screen sizes, providing a seamless experience across different platforms.
+        They provide offline functionality by using service workers. Service workers run in the background and cache resources necessary to run the app.
+        Caching also allows the app to sync data when the connection is restored. It also reduced load times, providing a faster experience.
+        PWAs are served over HTTPs to ensure data integrity and security.
     </p>
     <label for="textInput">Enter Text:</label>
     <input type="text" id="textInput" onblur="handleInput()">
@@ -51,7 +28,7 @@
 
     <label for="backgroundSelect">Select Background:</label>
     <select id="backgroundSelect" onchange="changeBackground()">
-        <option value="./images/lightblue.jpg" selected>Light Blue</option>
+        <option value="./images/lightblue.jpg">Light Blue</option>
         <option value="./images/lightgold.jpg">Light Gold</option>
     </select>
 
@@ -68,14 +45,23 @@
         // save a name in local storage
         function handleInput() {
             // Get the input value
-            var inputValue = document.getElementById('textInput').value;
+            let inputValue = document.getElementById('textInput').value;
             localStorage.setItem('name', inputValue);
-
-            // Display the retrieved data in a paragraph element
-            var userInfoParagraph = document.getElementById('hello');
-            userInfoParagraph.textContent = 'Hello ' + inputValue + '!';
+            updateText();
         }
 
+        function updateText() {
+            let inputValue = localStorage.getItem('name');
+            // Display the retrieved data in a paragraph element
+            let userInfoParagraph = document.getElementById('hello');
+            if(inputValue) {
+                userInfoParagraph.textContent = 'Hello, ' + inputValue + ', glad to see you back!';
+            }
+            else {
+                userInfoParagraph.textContent = 'Hello!';
+            }
+            console.log("text updated");
+        }
 
         // change background image based on the selected option
         function changeBackground() {
@@ -89,6 +75,17 @@
 
         // Initial background change on page load
         //changeBackground();
+        updateText();
+
+        // Listen for the storage event to update the paragraph when localStorage changes
+        self.addEventListener('storage', function (event) {
+            // Check if the event is related to the keys you are interested in
+            console.log("change to local storage");
+            if (event.key === 'name') {
+                // Update the paragraph with the new localStorage values
+                updateText();
+            }
+        });
     </script>
 </body>
 </html>

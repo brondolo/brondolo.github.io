@@ -3,17 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="style.css" />
     <title>CNIT 133M Homework 4</title>
     <link rel="manifest" href="/manifest.json">
-    <style>
-        body {
-            background-size: cover;
-            transition: background-image 0.5s ease-in-out;
-        }
-        input {
-            margin-bottom: 10px;
-        }
-    </style>
 </head>
 <body>
     <h1>About Progressive Web Apps</h1>
@@ -87,8 +79,6 @@
 
         // change background image based on the selected option
         function changeBackground() {
-            const name = document.getElementById('nameInput').value;
-            localStorage.setItem('name', name);
 
             const select = document.getElementById('backgroundSelect');
             const selectedOption = select.options[select.selectedIndex];
@@ -98,7 +88,7 @@
         }
 
         // Initial background change on page load
-        changeBackground();
+        //changeBackground();
     </script>
 </body>
 </html>

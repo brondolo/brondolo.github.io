@@ -1,0 +1,33 @@
+/*medium screens*/
+@media only screen and (max-width:992px){
+	header, footer, body {width:100%; padding: 0; margin: 0; overflow-x: hidden;}
+	body{
+		background:green;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin:0 auto;
+		padding:0;
+		width:100%;
+	}
+	img{
+		width:50%;
+	}	
+}
+
+/*small screens*/
+@media only screen and (max-width:769px){
+	header, footer, body {width:100%; padding: 0; margin: 0; overflow-x: hidden;}
+	body{
+		background:red;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin:0 auto;
+		padding:0;
+		width:100%;
+	}
+	img{
+		width:50%;
+	}	
+}

@@ -20,6 +20,7 @@
 	  }
 	  header {
 	     background-color: red;
+		 padding: 5px 5px;
 	  }
 	  main {
 		display: flex;
@@ -28,6 +29,7 @@
 		flex-wrap: wrap;
 		background-color: navy;
 		color: white;
+		padding: 15px 15px;
 	  }
 	  article {
 		display: flex;
@@ -36,21 +38,31 @@
 		background-color: violet;
 		color: blue;
 		order: 1;
+		padding: 15px 15px;
 	  }
 	  footer {
 		background-color: aquamarine;
+	  }
+	  p {
+		margin: 0;
+	  }
+	  aside {
+		min-width: fit-content;
 	  }
 	  #aside-left {
 		display: flex;
 		justify-content: center;
 		background-color:yellow;
 		order: -1;
+		padding: 5px 15px;
 	  }
 	  #aside-right {
 		display: flex;
 		justify-content: center;
 		background-color:pink;
 		order: 2;
+		padding: 5px 15px;
+
 	  }
    </style>
 </head>
@@ -63,7 +75,10 @@
 			<aside id="aside-left">This is aside 1</aside>
 			<aside id="aside-right">This is aside 2</aside>
 		</div>
-		<footer>This is the footer Copyright 2017</footer>
+		<footer>
+			<p>This is the footer</p> 
+			<p>Copyright 2017</p>
+		</footer>
 	</div>
 
 </body>

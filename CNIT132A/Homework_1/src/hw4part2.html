@@ -5,38 +5,66 @@
    <meta charset="utf-8">
    <meta name="description" content="working with grids in CNIT 132A">
    <style>
-      .page-layout {
-         display: grid; 
-         grid-template: repeat(2,50vh) / repeat(2, 1fr); 
-      }
-	  .news, .links, .search, .messages {
-	     text-align: center;
+      .flex-box-wrapper-1 {
+         display: flex; 
+		 text-align: center;
 		 font-weight: bold;
+		 flex-direction: column;
+		 justify-content: space-between;
+		 align-content: space-between;
+      }
+	  .flex-box-wrapper-2 {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-around;
 	  }
-	  .news {
-	     background-color: cyan;
-		 order: 3;
-	  }
-	  .links {
-	     background-color: orange;
-		 order: 1;
-	  }
-	  .search {
-	     background-color: violet;
-		 order: 0;
-	  }
-	  .messages {
+	  header {
 	     background-color: red;
-		 order: 2;
+	  }
+	  main {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-wrap: wrap;
+		background-color: navy;
+		color: white;
+	  }
+	  article {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background-color: violet;
+		color: blue;
+		order: 1;
+	  }
+	  footer {
+		background-color: aquamarine;
+	  }
+	  #aside-left {
+		display: flex;
+		justify-content: center;
+		background-color:yellow;
+		order: -1;
+	  }
+	  #aside-right {
+		display: flex;
+		justify-content: center;
+		background-color:pink;
+		order: 2;
 	  }
    </style>
 </head>
 <body>
-<div class="page-layout">
-  <div class="news">News</div>
-  <div class="links">Links</div>
-  <div class="search">Search</div>
-  <div class="messages">Messages</div>
-</div>
+	<div class="flex-box-wrapper-1">
+		<header>Name of Company</header>
+		<div class="flex-box-wrapper-2">
+			<main>This is the main article of my page! This is the main content of the page. In a 3-column layout, it should be shown in the middle between the aside 1 and aside 2!</main>
+			<article>This column was created to have come content as a challenge to adapt the old 3-column layout to a 4-column layout</article>
+			<aside id="aside-left">This is aside 1</aside>
+			<aside id="aside-right">This is aside 2</aside>
+		</div>
+		<footer>This is the footer Copyright 2017</footer>
+	</div>
+
 </body>
 </html>
